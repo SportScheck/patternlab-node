@@ -85,7 +85,7 @@ function loadAllEngines(enginesObject) {
   if (Object.keys(enginesObject).length === 0) {
     throw new Error('No engines loaded! Something is seriously wrong.');
   }
-  console.log('Done loading engines.');
+  //console.log('Done loading engines.');
 }
 
 
