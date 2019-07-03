@@ -56,7 +56,7 @@ function findEngineModulesInDirectory(dir) {
 function loadAllEngines(enginesObject) {
   enginesDirectories.forEach(function (engineDirectory) {
     var enginesInThisDir = findEngineModulesInDirectory(engineDirectory.path);
-    console.log(chalk.bold(`Loading engines from ${engineDirectory.displayName}...\n`));
+    // console.log(chalk.bold(`Loading engines from ${engineDirectory.displayName}...\n`));
 
     // find all engine-named things in this directory and try to load them,
     // unless it's already been loaded.
@@ -74,17 +74,18 @@ function loadAllEngines(enginesObject) {
         errorMessage = err.message;
       } finally {
         // report on the status of the engine, one way or another!
-        console.log(`  ${engineDiscovery.name}:`, errorMessage ? chalk.red(errorMessage) : successMessage);
+        if (errorMessage) {
+          console.log(`  ${engineDiscovery.name}:`, errorMessage ? chalk.red(errorMessage) : successMessage);
+        }
       }
     });
-    console.log('');
   });
 
   // Complain if for some reason we haven't loaded any engines.
   if (Object.keys(enginesObject).length === 0) {
     throw new Error('No engines loaded! Something is seriously wrong.');
   }
-  console.log(chalk.bold('Done loading engines.\n'));
+  console.log('Done loading engines.');
 }
 
 
