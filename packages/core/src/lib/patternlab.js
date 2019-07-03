@@ -501,7 +501,6 @@ module.exports = class PatternLab {
           // Allows serializing the compile state
           self.graph.node(pattern).compileState = pattern.compileState =
             CompileState.CLEAN;
-          logger.info('Built pattern: ' + pattern.patternPartial);
         });
       })
       .catch(reason => {
