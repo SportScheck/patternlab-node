@@ -455,7 +455,7 @@ var patternlab_engine = function (config) {
 
     // Allows serializing the compile state
     patternlab.graph.node(pattern).compileState = pattern.compileState = CompileState.CLEAN;
-    plutils.log.info("Built pattern: " + pattern.patternPartial);
+    // plutils.log.info("Built pattern: " + pattern.patternPartial);
     return true;
   }
 
