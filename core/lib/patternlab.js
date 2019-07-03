@@ -35,11 +35,13 @@ plutils.log.on('debug', msg => console.log(msg));
 plutils.log.on('warning', msg => console.log(msg));
 plutils.log.on('info', msg => console.log(msg));
 
+/*
 console.log(
   chalk.bold('\n====[ Pattern Lab / Node'),
   `- v${packageInfo.version}`,
   chalk.bold(']====\n')
 );
+*/
 
 var patternEngines = require('./pattern_engines');
 var EventEmitter = require('events').EventEmitter;
